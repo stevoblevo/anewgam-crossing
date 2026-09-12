@@ -1,0 +1,9 @@
+{
+  "name": "Anewgam · The House",
+  "short_name": "Anewgam",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#12111a",
+  "theme_color": "#12111a"
+}

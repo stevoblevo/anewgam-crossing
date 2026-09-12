@@ -4,127 +4,89 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#12111a">
+<meta name="description" content="Anewgam · The House. Sae.anewgam. Goober world and Peachfall game, one door.">
 <title>Anewgam · The House</title>
-<meta name="description" content="One house. Two living doors. Goober is Aiden’s world. Peachfall is the dream you can watch or play.">
-<link rel="stylesheet" href="site.css">
-<style>
-.stage{margin:4vh 7vw 8vh;border:1px solid rgba(234,195,125,.22);border-radius:14px;overflow:hidden;background:#0d0b12}
-.stage iframe{display:block;width:100%;min-height:68vh;border:0;background:#120c18}
-.peach-bar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;padding:14px 16px;background:#1b1724;border-bottom:1px solid rgba(234,195,125,.12)}
-.peach-bar button,.peach-bar a{border:1px solid #705186;background:#2a2034;color:#f3e4ff;border-radius:8px;padding:10px 14px;font:12px/1 ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
-.x-strip{padding:6vh 7vw;max-width:40rem}
-</style>
+<link rel="stylesheet" href="./site.css">
+<link rel="manifest" href="./manifest.webmanifest">
 </head>
 <body>
 <div class="bg" aria-hidden="true">
-  <img data-layer="hero" class="on" alt="" src="https://stevoblevo.github.io/goober/assets/rediscovered/world-hero.webp">
-  <img data-layer="lantern" alt="" src="https://stevoblevo.github.io/goober/assets/crossing.webp">
-  <img data-layer="garden" alt="" src="https://stevoblevo.github.io/goober/assets/garden.webp">
-  <img data-layer="sanctuary" alt="" src="https://stevoblevo.github.io/goober/assets/sanctuary.webp">
-  <img data-layer="play" alt="" src="https://stevoblevo.github.io/goober/assets/rediscovered/peachfall-03.webp">
-  <img data-layer="companions" alt="" src="https://stevoblevo.github.io/goober/assets/rediscovered/peachfall-06.webp">
+  <img data-layer="hero" class="on" src="https://stevoblevo.github.io/goober/assets/rediscovered/world-hero.webp" alt="">
+  <img data-layer="lantern" src="https://stevoblevo.github.io/goober/assets/crossing.webp" alt="">
+  <img data-layer="garden" src="https://stevoblevo.github.io/goober/assets/garden.webp" alt="">
+  <img data-layer="sae" src="https://stevoblevo.github.io/goober/assets/rediscovered/peachfall-04.webp" alt="">
+  <img data-layer="play" src="https://stevoblevo.github.io/goober/assets/rediscovered/peachfall-09.webp" alt="">
 </div>
 <div class="veil"></div>
 <div class="wrap">
 <nav class="top">
-  <a class="brand" href="#hero">Sae.anewgam / Saelion</a>
+  <a class="brand" href="./">Sae.anewgam · The House</a>
   <div class="links">
     <a href="#rooms">Rooms</a>
-    <a href="#dream">Watch / Play</a>
+    <a href="#approach">Peachfall</a>
     <a href="https://stevoblevo.github.io/goober/">Goober</a>
-    <a href="https://stevoblevo.github.io/peachfall/">Peachfall</a>
+    <a href="https://stevoblevo.github.io/peachfall/">Game</a>
     <a href="https://stevoblevo.github.io/goober/run/">Signal Run</a>
   </div>
 </nav>
-
-<section class="hero" id="hero" data-plate="hero">
-  <p class="eyebrow">Anewgam · The House</p>
-  <h1>One house.<br>Two living doors.</h1>
-  <p class="lede">Goober is Aiden’s world. Peachfall is Steven’s dream — watch it, or play it. This page does not replace either. It holds them in one scroll.</p>
-  <div class="actions">
-    <a href="#dream">Watch the dream</a>
-    <a href="https://stevoblevo.github.io/peachfall/">Play the dream</a>
-    <a href="https://stevoblevo.github.io/goober/">Enter Goober</a>
-  </div>
+<header class="hero" data-plate="hero">
+  <p class="eyebrow">Saelion · Anewgam · Aiden’s door</p>
+  <h1>One house.<br>Two living rooms.</h1>
+  <p class="lede">Goober is the world Aiden carries. Peachfall is the dream you can watch or play. This door does not copy either. It lets them sit at the same table.</p>
+</header>
+<section class="chapter" data-plate="lantern">
+  <p class="eyebrow">The Crossing</p>
+  <h2>Find your line. Make it yours.</h2>
+  <p class="lede">The plates were already painted. Scroll and the field changes. Tap a room and it opens. Nothing here overwrites the live PWA or the live game.</p>
 </section>
-
-<section class="chapter" id="rooms" data-plate="lantern">
+<section class="chapter" data-plate="garden">
+  <p class="eyebrow">Aiden’s world</p>
+  <h2>Phone first. Windows stays.</h2>
+  <p class="lede">Install Goober when you want the field log to go with him. Play Signal Run there. Come back here when you want the whole house in one glance.</p>
+</section>
+<section class="doors" id="rooms" data-plate="sae">
   <p class="eyebrow">Rooms</p>
-  <h2>Click a plate. Stay with the picture, or step into its room.</h2>
-  <p class="lede">Recovered art only. Each card opens the atlas plate and a door that already exists.</p>
-</section>
-
-<section class="doors">
+  <h2>Pictures that become places.</h2>
   <div class="grid">
-    <a class="card" href="https://stevoblevo.github.io/goober/gallery/#peachfall-03"><img src="https://stevoblevo.github.io/goober/assets/rediscovered/world-hero.webp" alt=""><span>Recovered world art</span></a>
-    <a class="card" href="https://stevoblevo.github.io/goober/gallery/#crossing"><img src="https://stevoblevo.github.io/goober/assets/crossing.webp" alt=""><span>Protect the Lantern</span></a>
-    <a class="card" href="https://stevoblevo.github.io/goober/gallery/#garden"><img src="https://stevoblevo.github.io/goober/assets/garden.webp" alt=""><span>EverDelve: Garden Central</span></a>
-    <a class="card" href="https://stevoblevo.github.io/goober/gallery/#sanctuary"><img src="https://stevoblevo.github.io/goober/assets/sanctuary.webp" alt=""><span>Enchanted Tower Garden Sanctuary</span></a>
-    <a class="card" href="https://stevoblevo.github.io/goober/gallery/#peachfall-06"><img src="https://stevoblevo.github.io/goober/assets/rediscovered/peachfall-06.webp" alt=""><span>Sae and Knight</span></a>
-    <a class="card" href="https://stevoblevo.github.io/goober/gallery/#peachfall-02"><img src="https://stevoblevo.github.io/goober/assets/rediscovered/peachfall-02.webp" alt=""><span>Astral assembly</span></a>
-    <a class="card" href="https://stevoblevo.github.io/goober/play/"><img src="https://stevoblevo.github.io/goober/assets/rediscovered/peachfall-09.webp" alt=""><span>Play makes a place</span></a>
-    <a class="card" href="https://stevoblevo.github.io/goober/"><img src="https://stevoblevo.github.io/goober/assets/goober-cover.jpg" alt=""><span>Goober cover · Aiden’s world</span></a>
+    <a class="card" href="./rooms/world.html"><img src="https://stevoblevo.github.io/goober/assets/rediscovered/world-hero.webp" alt="Recovered world art"><span>Recovered world · atlas</span></a>
+    <a class="card" href="./rooms/lantern.html"><img src="https://stevoblevo.github.io/goober/assets/crossing.webp" alt="Protect the Lantern"><span>Protect the Lantern</span></a>
+    <a class="card" href="./rooms/garden.html"><img src="https://stevoblevo.github.io/goober/assets/garden.webp" alt="EverDelve Garden Central"><span>EverDelve · Garden Central</span></a>
+    <a class="card" href="./rooms/sanctuary.html"><img src="https://stevoblevo.github.io/goober/assets/sanctuary.webp" alt="Enchanted Tower Garden Sanctuary"><span>Tower garden sanctuary</span></a>
+    <a class="card" href="./rooms/sae-knight.html"><img src="https://stevoblevo.github.io/goober/assets/rediscovered/peachfall-06.webp" alt="Sae and Knight"><span>Sae and Knight</span></a>
+    <a class="card" href="./rooms/astral.html"><img src="https://stevoblevo.github.io/goober/assets/rediscovered/peachfall-02.webp" alt="Astral assembly"><span>Astral assembly</span></a>
+    <a class="card" href="./rooms/play.html"><img src="https://stevoblevo.github.io/goober/assets/rediscovered/peachfall-09.webp" alt="Play creates the world"><span>Play creates the world</span></a>
+    <a class="card" href="./rooms/tower.html"><img src="https://stevoblevo.github.io/goober/assets/rediscovered/peachfall-01.webp" alt="The princess who could not leave the tower"><span>The tower story</span></a>
   </div>
 </section>
-
-<section class="chapter" id="dream" data-plate="play">
-  <p class="eyebrow">Peachfall</p>
-  <h2>Watch first. Play when you want the stick.</h2>
-  <p class="lede">The public game stays at /peachfall/. Watch the Dream is the film. Play the Dream is Aiden’s try. No standalone tape in the public atlas yet.</p>
-</section>
-
-<div class="stage">
-  <div class="peach-bar">
-    <button type="button" id="watch">Watch</button>
-    <button type="button" id="play">Play</button>
-    <a href="https://stevoblevo.github.io/peachfall/">Open Peachfall ↗</a>
-    <a href="https://stevoblevo.github.io/goober/run/">Signal Run ↗</a>
-  </div>
-  <iframe id="dream-frame" title="The Peachfall" src="https://stevoblevo.github.io/peachfall/" allow="autoplay"></iframe>
-</div>
-
-<section class="chapter" id="aiden" data-plate="companions">
-  <p class="eyebrow">Aiden</p>
-  <h2>World, log, and a line through the field.</h2>
-  <p class="lede">Signal Run keeps arrows. The PWA stays on /goober/. When you are ready for one install that covers the whole house, we widen the scope — we do not throw either tree away.</p>
-  <div class="actions">
-    <a href="https://stevoblevo.github.io/goober/">Goober PWA</a>
-    <a href="https://stevoblevo.github.io/goober/run/">Signal Run</a>
-    <a href="https://stevoblevo.github.io/goober/gallery/">Atlas</a>
+<section class="peach" id="approach" data-plate="play">
+  <p class="eyebrow">/#approach</p>
+  <h2>Watch the dream. Or play it.</h2>
+  <p class="lede">Default is Watch — Peachfall walking itself. Play hands the stick to Aiden. Same game, two doors. No recovered MP4; Watch is the film.</p>
+  <div class="tabs">
+    <a class="on" href="https://stevoblevo.github.io/peachfall/">Watch / Play the live game</a>
     <a href="https://stevoblevo.github.io/goober/play/">Handshake</a>
+    <a href="https://stevoblevo.github.io/goober/run/">Signal Run</a>
+    <a href="https://x.com/signup">Aiden’s X</a>
   </div>
+  <div class="peach-frame">
+    <iframe title="The Peachfall" src="https://stevoblevo.github.io/peachfall/" allow="autoplay" loading="lazy"></iframe>
+  </div>
+  <p class="muted">If the field is quiet, tap WATCH THE DREAM inside it. PLAY THE DREAM is Aiden’s try.</p>
 </section>
-
-<section class="x-strip">
-  <p class="eyebrow">X</p>
-  <h2>Keep an account he wants to keep.</h2>
-  <p class="lede">Easy start: <a href="https://x.com/i/flow/signup">x.com/i/flow/signup</a>. Look at how <a href="https://x.com/heavypulp">@heavypulp</a> puts picture and motion on the wall. This house does not post for him.</p>
-</section>
-
 <footer class="foot">
   <div>
     <p class="mark gold">.anewgam</p>
-    <p>Find your line. Make it yours.</p>
+    <p>Sae · Saelion · Goober · Peachfall. Sources stay live. This house only points.</p>
+    <p class="xrow">
+      <a href="https://stevoblevo.github.io/goober/">Live Goober PWA</a>
+      <a href="https://stevoblevo.github.io/peachfall/">Live Peachfall</a>
+      <a href="https://x.com/heavypulp">@heavypulp</a>
+      <a href="https://github.com/stevoblevo/anewgam-crossing">Source</a>
+    </p>
   </div>
-  <div>
-    <p class="muted">Third door. Sources stay live.</p>
-    <p><a href="https://stevoblevo.github.io/goober/">Goober</a> · <a href="https://stevoblevo.github.io/peachfall/">Peachfall</a> · <a href="https://github.com/stevoblevo/anewgam-crossing">Source</a></p>
-  </div>
+  <p class="muted">Recovered plates from the atlas. Not regenerated. Local Blevodesk stays Steven’s shop.</p>
 </footer>
 </div>
-<script src="site.js"></script>
-<script>
-const frame=document.getElementById("dream-frame");
-function poke(mode){
-  try{
-    const doc=frame.contentDocument; if(!doc) return;
-    doc.getElementById("btn-reset")?.click();
-    doc.getElementById(mode==="play"?"play-dream":"watch-dream")?.click();
-  }catch(_err){}
-}
-frame.addEventListener("load",()=>poke("watch"));
-document.getElementById("watch").onclick=()=>poke("watch");
-document.getElementById("play").onclick=()=>poke("play");
-</script>
+<script src="./site.js"></script>
 </body>
 </html>
