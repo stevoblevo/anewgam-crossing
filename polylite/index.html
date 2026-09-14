@@ -3,165 +3,92 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Polylite · The Prequen Edition</title>
+<title>Polylite · pictures first</title>
 <style>
-:root{--ink:#eef3ff;--muted:#b7c0e0;--gold:#f3d27a;--sky1:#1a1640;--sky2:#3a2a78}
 *{box-sizing:border-box}
-html,body{margin:0;height:100%;background:#120f28;color:var(--ink);font-family:Georgia,serif}
-body{display:flex;flex-direction:column;min-height:100%}
-header{padding:10px 14px 6px;display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
-h1{margin:0;font-size:22px;letter-spacing:.02em}
-.tag{margin:2px 0 0;color:var(--gold);font-size:13px}
-.goal{background:#241b4a;border:1px solid #6d5bd6;border-radius:14px;padding:8px 12px;min-width:180px}
-.goal b{display:block;color:var(--gold);font-size:12px}
-.goal span{font-size:14px}
-nav{display:flex;gap:8px;padding:0 14px 10px;flex-wrap:wrap}
-button{font:inherit;cursor:pointer;border:0;border-radius:999px;padding:8px 14px;background:#2a2158;color:var(--ink)}
+html,body{margin:0;background:#140f24;color:#f4eefc;font-family:Georgia,serif}
+body{max-width:980px;margin:0 auto;padding:12px}
+h1{margin:0;font-size:28px}
+.tag{color:#f3d27a;margin:4px 0 12px}
+nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+button{font:inherit;border:0;border-radius:999px;padding:8px 14px;background:#2a2158;color:#fff;cursor:pointer}
 button.on{background:#f3d27a;color:#2a1840;font-weight:700}
-.help{padding:0 14px 8px;color:var(--muted);font-size:15px;min-height:2.2em}
-#stage{position:relative;flex:1;margin:0 14px 12px;border-radius:22px;overflow:hidden;background:linear-gradient(#2b1e68,#6a4ca8 55%,#9bd67a 55%,#6aa85a);box-shadow:0 0 0 3px #4c3a9a inset}
-#stage.play{cursor:crosshair}
-.actor,.thing{position:absolute;transform:translate(-50%,-50%);user-select:none;text-align:center;transition:left .45s ease,top .45s ease}
-.face{font-size:42px;filter:drop-shadow(0 4px 0 rgba(0,0,0,.25));line-height:1}
-.label{font-size:11px;background:#1b1438d9;border-radius:999px;padding:2px 7px;margin-top:2px;display:inline-block}
-.hint{position:absolute;white-space:nowrap;font-size:13px;color:#fff8c8;text-shadow:0 1px 2px #000;animation:bob 1.2s ease-in-out infinite}
-@keyframes bob{50%{transform:translateY(-5px)}}
-.pocket{position:absolute;right:10px;top:10px;background:#1b1438cc;border-radius:12px;padding:8px;font-size:13px}
-#watch{position:absolute;inset:0;display:none;flex-direction:column;justify-content:flex-end;padding:18px;background:radial-gradient(circle at 70% 20%,#6d4dff55,transparent 40%),linear-gradient(#1c1548,#3a2a78)}
-#watch.show{display:flex}
-#watch h2{margin:0 0 6px;font-size:28px}
-#watch p{margin:0;color:#d7def8;font-size:18px;max-width:28rem}
-.num{color:var(--gold);font-size:13px}
-.signs{display:none;position:absolute;left:50%;bottom:14px;transform:translateX(-50%);gap:8px;flex-wrap:wrap;justify-content:center;width:92%}
-.signs.show{display:flex}
-.signs button{background:#fff3;border:1px solid #fff6}
-.signs button:hover{background:#f3d27a;color:#2a1840}
-footer{padding:0 14px 12px;color:#8e97b8;font-size:12px}
+.help{min-height:2.4em;color:#d7def8}
+#frame{position:relative;background:#0c0a16;border-radius:18px;overflow:hidden;min-height:62vh;display:flex;align-items:center;justify-content:center}
+#frame img{width:100%;height:auto;max-height:72vh;object-fit:contain;display:block}
+.caption{position:absolute;left:12px;right:12px;bottom:12px;background:#1b1438e6;border-radius:12px;padding:10px 12px}
+.caption b{color:#f3d27a}
+.strip{display:flex;gap:8px;overflow:auto;padding:10px 0 4px}
+.strip img{height:72px;width:auto;border-radius:8px;cursor:pointer;opacity:.7;border:2px solid transparent}
+.strip img.on{opacity:1;border-color:#f3d27a}
+.playbit{display:none;padding:8px 0 16px}
+.playbit.on{display:block}
+.who{display:flex;gap:12px;align-items:center;margin:8px 0}
+.who img{width:88px;height:88px;object-fit:cover;border-radius:18px}
 a{color:#f3d27a}
 </style>
 </head>
 <body>
-<header>
-  <div>
-    <h1>Polylite</h1>
-    <p class="tag">The Prequen Edition · Small Gloobs. Big Worlds. Same Hearts.</p>
-  </div>
-  <div class="goal"><b>GOAL</b><span id="score">Friends 0/3 · Crystal 0/1</span></div>
-</header>
+<h1>Polylite</h1>
+<p class="tag">The pictures were already here. Watch looks at them. Play is later.</p>
 <nav>
-  <button id="btnWatch" class="on">Watch</button>
-  <button id="btnPlay">Play</button>
-  <button id="btnNext">Next card</button>
+  <button id="w" class="on">Watch pictures</button>
+  <button id="p">Play later</button>
+  <button id="n">Next picture</button>
 </nav>
-<p class="help" id="help">Watch = I flip the story cards. You only look. Press Next, or wait.</p>
-<div id="stage">
-  <div id="watch" class="show"><div class="num" id="wnum">01 / 22</div><h2 id="wtitle">Awaken</h2><p id="wline">Sae sits up in bed. A new day. A new adventure.</p></div>
-  <div class="pocket" id="pocket">Pocket: empty</div>
-  <div class="actor" id="sae" style="left:18%;top:62%"><div class="face">👩‍👑</div><div class="label">SAE · tap window first</div></div>
-  <div class="actor" id="knight" style="left:10%;top:70%"><div class="face">🤖</div><div class="label">KNIGHT follows you</div></div>
-  <div class="thing" id="window" style="left:16%;top:38%"><div class="face">🚪</div><div class="label">WINDOW · wake</div><div class="hint">tap me</div></div>
-  <div class="thing gloob" data-name="Pip" style="left:48%;top:72%"><div class="face">🟣</div><div class="label">GLOOB Pip · hug</div></div>
-  <div class="thing gloob" data-name="Mint" style="left:64%;top:66%"><div class="face">🟢</div><div class="label">GLOOB Mint · hug</div></div>
-  <div class="thing gloob" data-name="Peach" style="left:78%;top:74%"><div class="face">🟡</div><div class="label">GLOOB Peach · hug</div></div>
-  <div class="thing" id="crystal" style="left:58%;top:48%"><div class="face">💎</div><div class="label">POLYITE · gather gently</div></div>
-  <div class="signs" id="signs">
-    <button data-path="Higher">Higher</button>
-    <button data-path="Kinder">Kinder</button>
-    <button data-path="Brighter">Brighter</button>
-    <button data-path="Together">Together</button>
-  </div>
+<p class="help" id="help">This is Sae. Tap Next to walk the walls we already painted.</p>
+<div id="frame"><img id="hero" alt=""><div class="caption"><b id="ct">Sae · dream guide</b><div id="cl">Oh. You're here. I've been waiting just for you.</div></div></div>
+<div class="strip" id="strip"></div>
+<div class="playbit" id="playbit">
+  <p>Play is still a toy. The love is in the pictures above.</p>
+  <div class="who"><img src="https://stevoblevo.github.io/peachfall/source/images/continuity/04_sae_dream_guide_portrait.png" alt="Sae"><div>Sae wakes. The knight stays close. Gloobs are friends. One crystal is enough.</div></div>
+  <p><a href="https://stevoblevo.github.io/goober/gallery/">Open the whole atlas</a> · <a href="https://stevoblevo.github.io/peachfall/">Peachfall</a></p>
 </div>
-<footer>Kids’ Mod on. Gloobs are friends. A Saelion × Anewgam candidate · does not replace Peachfall or Goober. Blessin’ Gen(them.all)</footer>
 <script>
-const cards=[
-["Awaken","Sae sits up in bed. A new day. A new adventure."],
-["The Song","Songs make brighter worlds. Sae-On."],
-["The Knight","The little robot with the scarf is always with you."],
-["4Gen Strong","Different times. Same hearts."],
-["Gloobmoon","When the Gloobmoon rises, friends fall into the world."],
-["The Gloobs","Round pastel blobs. Not enemies. Hug them."],
-["Polylite","A small crystal. Magic you can build with."],
-["Explore","Higher. Kinder. Brighter. Together."],
-["Mine","Mine gently. Respect what you find."],
-["Solve","Restore and repair. Puzzles, not fights."],
-["Friends","Different shapes. Same love."],
-["Kids’ Mod","Safe. Kind. Creative. All are welcome."],
-["Prequen","Not to rule over. To lift up."],
-["Create","Imagine. Weave. Build."],
-["Challenges","Fun challenges. Grow your skills."],
-["Loom","Use the Loom to connect worlds."],
-["Choices","Restore / Create / Help / Explore / New Path."],
-["Together","Different strengths. Brighter together."],
-["Share","Share stories. Build kindness."],
-["Next Gen","A new generation. A brighter tomorrow."],
-["Blessing","Blessin’ Gen(them.all). Carry the blessing."],
-["Open Horizon","The horizon is just the beginning."]
+const plates=[
+  {t:"Sae · dream guide",c:"Oh. You're here. I've been waiting just for you.",src:"https://stevoblevo.github.io/peachfall/source/images/continuity/04_sae_dream_guide_portrait.png"},
+  {t:"hi sae",c:"Same face. Flower crown. The porch card.",src:"https://pbs.twimg.com/media/HSGma1QWsAYRiCh.jpg"},
+  {t:"Sae and Knight",c:"Make one promise real. Our future awaits.",src:"https://stevoblevo.github.io/peachfall/source/images/continuity/06_sae_and_knight_future_key_art.png"},
+  {t:"Gen22 · the tower",c:"The princess who could not leave. Then she did, a little farther.",src:"https://stevoblevo.github.io/peachfall/source/images/anchors/01_gen22_page1_the_princess_who_could_not_leave_the_tower.png"},
+  {t:"Gen22 · watercolor",c:"The letter that crossed the boundary. Let's go steal our future back.",src:"https://stevoblevo.github.io/peachfall/source/images/continuity/08_gen22_watercolor_page1_of_2.png"},
+  {t:"Caschae · letter send-off",c:"Lantern on. Letter in the bag. Home side of the door.",src:"https://stevoblevo.github.io/goober/assets/skein-knot/caschae-letter-sendoff.webp"},
+  {t:"Play creates the world",c:"Discovery becomes history.",src:"https://stevoblevo.github.io/peachfall/source/images/continuity/09_play_creates_the_world_concept.png"},
+  {t:"Atlas",c:"All the recovered plates live here.",src:"https://stevoblevo.github.io/goober/assets/rediscovered/world-hero.webp"}
 ];
-let mode="watch",i=0,awake=false,friends=0,crystal=0,auto=null;
-const $=id=>document.getElementById(id);
-const help=$("help");
-function say(t){help.textContent=t}
-function score(){$("score").textContent=`Friends ${friends}/3 · Crystal ${crystal}/1`}
-function showCard(){$("wnum").textContent=String(i+1).padStart(2,"0")+" / 22";$("wtitle").textContent=cards[i][0];$("wline").textContent=cards[i][1]}
-function setMode(m){
-  mode=m;
-  $("btnWatch").classList.toggle("on",m==="watch");
-  $("btnPlay").classList.toggle("on",m==="play");
-  $("watch").classList.toggle("show",m==="watch");
-  $("stage").classList.toggle("play",m==="play");
-  if(m==="watch"){say("Watch = story cards. Press Next. You are not steering yet."); startAuto()}
-  else {stopAuto(); say(awake?"Tap a Gloob to hug. Tap the crystal to gather.":"Tap the WINDOW. Sae wakes. The Knight will follow.")}
-}
-function startAuto(){stopAuto();auto=setInterval(()=>{i=(i+1)%22;showCard()},3200)}
-function stopAuto(){if(auto){clearInterval(auto);auto=null}}
-$("btnWatch").onclick=()=>setMode("watch");
-$("btnPlay").onclick=()=>setMode("play");
-$("btnNext").onclick=()=>{if(mode!=="watch")setMode("watch");stopAuto();i=(i+1)%22;showCard();say("Card "+cards[i][0]+". Press Next again, or Play when you want to tap.")};
-function move(el,x,y){el.style.left=x+"%";el.style.top=y+"%"}
-function placeFollowers(){
-  const sx=parseFloat($("sae").style.left), sy=parseFloat($("sae").style.top);
-  move($("knight"), sx-8, sy+8);
-  document.querySelectorAll(".gloob.friend").forEach((g,n)=>move(g, sx-6-(n+1)*6, sy+6+n*3));
-}
-$("stage").addEventListener("click",e=>{
-  if(mode!=="play")return;
-  const t=e.target.closest(".thing,.actor");
-  if(!t){
-    if(!awake){say("Not yet. Tap the WINDOW first.");return}
-    const r=$("stage").getBoundingClientRect();
-    const x=((e.clientX-r.left)/r.width)*100;
-    const y=((e.clientY-r.top)/r.height)*100;
-    move($("sae"),x,y); placeFollowers(); say("Sae walks. The Knight follows."); return;
-  }
-  if(t.id==="window" || (t.id==="sae" && !awake)){
-    awake=true; t.querySelector(".hint")?.remove();
-    $("sae").querySelector(".label").textContent="SAE · you";
-    move($("sae"),22,58); placeFollowers();
-    say("Sae is awake. Tap a pink, green, or yellow GLOOB to hug it."); return;
-  }
-  if(t.classList.contains("gloob")){
-    if(!awake){say("Wake Sae at the WINDOW first.");return}
-    if(t.classList.contains("friend")){say(t.dataset.name+" is already with you.");return}
-    t.classList.add("friend"); friends++; score();
-    t.querySelector(".label").textContent="GLOOB "+t.dataset.name+" · friend";
-    placeFollowers();
-    say("You hugged "+t.dataset.name+". Friends "+friends+"/3."+(friends>=3&&crystal?" Signposts are open.":"")); maybeSigns(); return;
-  }
-  if(t.id==="crystal"){
-    if(!awake){say("Wake Sae first.");return}
-    if(crystal){say("You already carry one Polylite. That is enough.");return}
-    crystal=1; score(); t.style.display="none"; $("pocket").textContent="Pocket: one Polylite 💎";
-    say("You gathered one crystal gently. It did not break."); maybeSigns(); return;
-  }
+let i=0;
+const hero=document.getElementById("hero");
+const strip=document.getElementById("strip");
+plates.forEach((p,n)=>{
+  const im=document.createElement("img");
+  im.src=p.src; im.alt=p.t;
+  im.onclick=()=>show(n);
+  strip.appendChild(im);
 });
-function maybeSigns(){ if(friends>=3 && crystal){ $("signs").classList.add("show"); say("Goal done. Pick a signpost: Higher, Kinder, Brighter, or Together."); } }
-document.querySelectorAll("#signs button").forEach(b=>b.onclick=()=>{
-  const p=b.dataset.path;
-  const skies={Higher:"linear-gradient(#14224c,#6ec8ff 55%,#8fd36a 55%,#5aa050)",Kinder:"linear-gradient(#4a2060,#f4a0c8 55%,#b7e07a 55%,#6aa85a)",Brighter:"linear-gradient(#3a2a10,#ffd36a 55%,#c8e06a 55%,#7aaa40)",Together:"linear-gradient(#2a1860,#9b7cff 55%,#9bd67a 55%,#6aa85a)"};
-  $("stage").style.background=skies[p];
-  say("The world leans "+p+". Different strengths. Brighter together. Horizon is just the beginning.");
-});
-showCard(); startAuto();
+function show(n){
+  i=n;
+  const p=plates[i];
+  hero.src=p.src; hero.alt=p.t;
+  document.getElementById("ct").textContent=p.t;
+  document.getElementById("cl").textContent=p.c;
+  document.getElementById("help").textContent=p.t+" — tap Next, or tap a thumbnail.";
+  [...strip.children].forEach((el,k)=>el.classList.toggle("on",k===i));
+}
+function watch(){
+  document.getElementById("w").classList.add("on");
+  document.getElementById("p").classList.remove("on");
+  document.getElementById("playbit").classList.remove("on");
+  document.getElementById("frame").style.display="flex";
+}
+function play(){
+  document.getElementById("p").classList.add("on");
+  document.getElementById("w").classList.remove("on");
+  document.getElementById("playbit").classList.add("on");
+  document.getElementById("help").textContent="Play is the little toy. The pictures are the game right now.";
+}
+document.getElementById("w").onclick=watch;
+document.getElementById("p").onclick=play;
+document.getElementById("n").onclick=()=>{watch();show((i+1)%plates.length)};
+show(0);
 </script>
 </body>
 </html>
